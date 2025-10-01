@@ -8,6 +8,8 @@ let
     kitty = "kitty";
     hypr = "hypr";
     fastfetch = "fastfetch";
+    rofi = "rofi";
+    dunst = "dunst";
   };
 in 
 
@@ -40,5 +42,9 @@ in
     nixpkgs-fmt
     nodejs
     gcc
+    nerd-fonts.jetbrains-mono
+    jetbrains-mono
+    speedtest-cli
+    home-manager
   ];
 }

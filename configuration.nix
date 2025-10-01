@@ -175,8 +175,6 @@
     xdg-user-dirs
     xdg-utils
     zoom-us
-    nerd-fonts.jetbrains-mono
-    jetbrains-mono
     ntfs3g
     networkmanagerapplet
     dorion

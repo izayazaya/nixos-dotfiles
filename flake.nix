@@ -33,5 +33,10 @@
 	}
       ];
     };
+    homeConfigurations.izayaa = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      extraSpecialArgs = { inherit zen-browser; system = "x86_64-linux"; };
+      modules = [ ./home.nix ];
+    };
   };
 }
