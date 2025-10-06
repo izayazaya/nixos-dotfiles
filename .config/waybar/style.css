@@ -1,0 +1,316 @@
+/*
+   ____                       
+  /  _/__ ___ ___ _____ ____ _
+ _/ //_ // _ `/ // / _ `/ _ `/
+/___//__/\_,_/\_, /\_,_/\_,_/ 
+             /___/            
+        Izayaa 2025
+*/
+
+@import "colors.css";
+
+/* 
+  _____                      __
+ / ___/__ ___  ___ _______ _/ /
+/ (_ / -_) _ \/ -_) __/ _ `/ / 
+\___/\__/_//_/\__/_/  \_,_/_/  
+*/
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: transparent;    
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+.modules-left {
+    padding-left: 8px;
+}
+
+.modules-right {
+    padding-right: 4px;
+}
+
+/*
+ _      __         __                            
+| | /| / /__  ____/ /__ ___ ___  ___ ________ ___
+| |/ |/ / _ \/ __/  '_/(_-</ _ \/ _ `/ __/ -_|_-<
+|__/|__/\___/_/ /_/\_\/___/ .__/\_,_/\__/\__/___/
+                         /_/                     
+*/
+
+ #workspaces {
+    background-color: @surface0;
+    border-radius: 16px;
+    margin: 4px;
+    font-size: 14px;
+    color: @text;
+}
+
+#workspaces button {
+    box-shadow: none;    
+    text-shadow: none;
+    margin: 4px;
+    padding: 0px 4px 0px 4px;
+    color: @text;
+    transition: all 0.2s ease-in-out;
+    border-radius: 12px;
+}
+
+#workspaces button.active {
+    box-shadow: none;    
+    text-shadow: none;
+    color: @surface0;
+    background: @sapphire;
+}
+
+#workspaces button:hover {
+    box-shadow: none;    
+    text-shadow: none;
+    color: @surface0;
+    background: @sky;
+}
+
+/*
+ ______          ____  _    
+/_  __/__  ___  / / /_(_)__ 
+ / / / _ \/ _ \/ / __/ / _ \
+/_/  \___/\___/_/\__/_/ .__/
+                     /_/    
+*/
+
+tooltip {
+    border-radius: 12px;
+    background-color: @base;
+    opacity:0.8;
+    padding:16px;
+    margin:0px;
+}
+
+tooltip label {
+    color: @text;
+}
+
+/*
+ _      ___         __          
+| | /| / (_)__  ___/ /__ _    __
+| |/ |/ / / _ \/ _  / _ \ |/|/ /
+|__/|__/_/_//_/\_,_/\___/__,__/ 
+*/
+
+#window {
+    margin: 4px;
+    padding: 0px 12px;
+    border-radius: 16px;
+    background-color: @surface0;
+    color: @sapphire;
+    font-size:14px;
+    font-weight:normal;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+/*
+   __  ___        __     __      
+  /  |/  /__  ___/ /_ __/ /__ ___
+ / /|_/ / _ \/ _  / // / / -_|_-<
+/_/  /_/\___/\_,_/\_,_/_/\__/___/
+*/
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/*
+   ____     __             __  ___        __     __      
+  / __/_ __/ /________ _  /  |/  /__  ___/ /_ __/ /__ ___
+ / _/ \ \ / __/ __/ _ `/ / /|_/ / _ \/ _  / // / / -_|_-<
+/___//_\_\\__/_/  \_,_/ /_/  /_/\___/\_,_/\_,_/_/\__/___/
+*/
+
+#custom-appmenuicon {
+    font-size: 24px;
+    color: @sapphire;
+    margin: 0px 14px 0px 0px;
+    transition: all 0.2s ease-in-out;
+}
+
+#custom-appmenuicon:hover {
+    color: @sky;   
+}
+
+#misc,
+#misc2 {
+    background-color: @surface0;
+    margin: 4px;
+    padding: 0 12px; 
+    border-radius: 16px;
+}
+
+/*
+   ____      _ __ 
+  / __/_ __ (_) /_
+ / _/ \ \ // / __/
+/___//_\_\/_/\__/ 
+*/
+
+#custom-exit {
+    margin: 0px 4px 0px 0px;
+    padding: 0px;
+    font-size: 16px;
+    color: @lavender;
+    transition: all 0.2s ease-in-out;
+}
+
+/*
+  _______         __  
+ / ___/ /__  ____/ /__
+/ /__/ / _ \/ __/  '_/
+\___/_/\___/\__/_/\_\ 
+*/
+
+#clock {
+    font-size: 14px;
+    color: @sky;
+    margin: 0;
+}
+
+/*
+   ___          ___    
+  / _ |__ _____/ (_)__ 
+ / __ / // / _  / / _ \
+/_/ |_\_,_/\_,_/_/\___/
+*/
+
+ #pulseaudio {
+    font-size: 14px;
+    color: @green;
+    border-radius: 12px;
+    margin: 0px 12px 0px 0px;
+}
+
+/*
+   _  __    __                  __  
+  / |/ /__ / /__    _____  ____/ /__
+ /    / -_) __/ |/|/ / _ \/ __/  '_/
+/_/|_/\__/\__/|__,__/\___/_/ /_/\_\ 
+*/
+
+#network {
+    font-size: 14px;
+    color: @sapphire;
+    border-radius: 12px;
+    margin: 0px 24px 0px 0px;
+}
+
+/*
+   ___  __         __            __  __ 
+  / _ )/ /_ _____ / /____  ___  / /_/ / 
+ / _  / / // / -_) __/ _ \/ _ \/ __/ _ \
+/____/_/\_,_/\__/\__/\___/\___/\__/_//_/
+*/
+
+ #bluetooth, #bluetooth.on, #bluetooth.connected {
+    font-size: 14px;
+    color: @blue;
+    border-radius: 12px;
+    margin: 0px 24px 0px 0px;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*
+   ___       __  __              
+  / _ )___ _/ /_/ /____ ______ __
+ / _  / _ `/ __/ __/ -_) __/ // /
+/____/\_,_/\__/\__/\__/_/  \_, / 
+                          /___/ 
+*/
+
+#battery {
+    font-size: 14px;
+    color: @teal;
+    border-radius: 12px;
+    padding: 0 12px;
+    margin: 0px 12px 0px 0px;
+}
+
+@keyframes blink {
+    to {
+        background-color: @red;
+        color: @text;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/*
+ ______             
+/_  __/______ ___ __
+ / / / __/ _ `/ // /
+/_/ /_/  \_,_/\_, / 
+             /___/ 
+*/
+
+#tray {
+    background-color: @surface0;
+    margin: 4px;
+    padding: 0 12px; 
+    border-radius: 16px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+}
+
+/*
+   ____     __          
+  / __/_ __/ /________ _
+ / _/ \ \ / __/ __/ _ `/
+/___//_\_\\__/_/  \_,_/ 
+*/
+
+#pulseaudio,
+#battery,
+#clock,
+#network,
+#bluetooth {
+    transition: all 0.2s ease-in-out;
+}
+
+#pulseaudio:hover,
+#battery:hover,
+#clock:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-exit:hover {
+    color: @rosewater;
+}

@@ -10,9 +10,11 @@ return {
 		-- requirements installed.
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
+			enabled = true,
 			build = "make",
-			cond = function()
-				return vim.fn.executable("make") == 1
+			dependencies = { "nvim-telescope/telescope.nvim" },
+			config = function()
+				require("telescope").load_extension("fzf")
 			end,
 		},
 		"nvim-telescope/telescope-ui-select.nvim",

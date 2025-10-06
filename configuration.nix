@@ -20,6 +20,9 @@
   # Fix time sync for dual-boot
   time.hardwareClockInLocalTime = true;
 
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -56,7 +59,7 @@
   users.users.izayaa = {
     isNormalUser = true;
     description = "Izayaa";
-    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "plugdev" ];
     packages = with pkgs; [];
   };
 
@@ -69,6 +72,10 @@
 
   # Enable steam
   programs.steam.enable = true;
+
+  programs.adb.enable = true;
+
+  services.udev.packages = [ pkgs.android-udev-rules ];
 
   # Boot with plymouth splash screen
   boot = {
@@ -96,6 +103,8 @@
   # Enable flatpak
   services.flatpak.enable = true;
 
+  services.upower.enable = true;
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
@@ -112,7 +121,9 @@
     dunst
     nwg-look
     libnotify
+    librsvg
     hyprpaper
+    hyprshot
     hypridle
     hyprlock
     hyprpicker
@@ -153,6 +164,10 @@
     wlogout
     yazi
     bibata-cursors
+    scrcpy
+    android-tools
+    lxqt.lxqt-policykit
+    gsmartcontrol
     zathura
     tealdeer
     parabolic
@@ -167,7 +182,8 @@
     mpv
     os-prober
     font-awesome
-    plymouth rsync
+    plymouth 
+    rsync
     smartmontools
     unzip
     uwsm
@@ -181,8 +197,6 @@
     cmatrix
     autojump
     brightnessctl
-    grim
-    slurp
     python314
     blueman
     p7zip
@@ -193,9 +207,10 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
-  # Make virtualbox work in NixOS
-  virtualisation.virtualbox.host.enable = true;
-  # virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  users.extraGroups.libvirtd.members = [ "izayaa" ];
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -223,5 +238,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }

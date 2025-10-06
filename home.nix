@@ -10,6 +10,8 @@ let
     fastfetch = "fastfetch";
     rofi = "rofi";
     dunst = "dunst";
+    waybar = "waybar";
+    wlogout = "wlogout";
   };
 in 
 
@@ -30,21 +32,36 @@ in
   home.homeDirectory = "/home/izayaa";
   home.stateVersion = "25.05";
 
+  programs.neovim = {
+    enable = true;
+    extraLuaPackages = luaPackages: with luaPackages; [ magick ];
+    extraPackages = [ pkgs.imagemagick ];
+  };
+
   xdg.configFile = builtins.mapAttrs (name: subpath: {
     source = create_symlink "${dotfiles}/${subpath}";
     recursive = true;
   }) configs;
 
   home.packages = with pkgs; [
-    neovim
+    imagemagick
     ripgrep
+    wl-clipboard
     nil
     nixpkgs-fmt
     nodejs
     gcc
+    cowsay
+    gnumake
+    cmake
     nerd-fonts.jetbrains-mono
     jetbrains-mono
     speedtest-cli
-    home-manager
+    home-manager  
   ];
+  
+  dconf.settings."org/virt-manager/virt-manager/connections" = {
+    autoconnect = [ "qemu:///system" ];
+    uris = [ "qemu:///system" ];
+  }; 
 }

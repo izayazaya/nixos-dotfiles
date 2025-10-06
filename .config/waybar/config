@@ -1,0 +1,41 @@
+{
+    // General Settings
+    "layer": "top",
+    "margin-top": 8,
+    "margin-bottom": -8,
+    "margin-left": 8,
+    "margin-right": 8,
+    "spacing": 0,
+    // Load Modules
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
+
+    // Modules Left
+    "modules-left": [
+        "custom/appmenuicon",
+        "hyprland/workspaces",
+    ],
+    // Modules Center
+    "modules-center": [
+        "hyprland/window",
+    ],
+    // Modules Right    
+    "modules-right": ["group/misc", "group/misc2", "tray"],
+    "group/misc": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "battery",
+            "clock"
+        ],
+    },
+    "group/misc2": {
+        "orientation": "horizontal",
+        "modules": [
+            "network",
+            "bluetooth",
+            "custom/exit"
+        ]
+    }
+}
